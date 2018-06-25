@@ -1,0 +1,177 @@
+var ec = {
+  s: function(dom) {
+    return document.querySelector(dom);
+  },
+  obj: {},
+  fn: {},
+  Router: function() {
+    this.start = function(obj) {
+      var fn = location.hash.split('#')[1];
+      try {
+        fn = ( fn ? fn : '' );
+        obj[fn]()
+      } catch (err) { 
+        console.log('没有对应的路由哦')
+      }
+      window.onhashchange = function() {
+        var url = location.hash;
+        if(url) {
+          url = url.split('#')[1]
+        } else {
+          url = ''
+        }
+        for(var route in obj) {
+          if(route == url) {
+            obj[route]()
+          }
+        }
+      }
+    }
+  },
+  explainScript: function(node) {
+    var script = document.createElement('script');
+    var t = document.createTextNode(node.getElementsByTagName('script')[0].text);
+    script.appendChild(t)
+    node.appendChild(script)
+    node.removeChild(node.getElementsByTagName('script')[0])
+  },
+  inserCmp: function(url, node, fn) {
+    var that = this
+    if(fetch) {
+      fetch(url).then(function(res) {
+        return res.text() // 把返回的数据转化为字符串数据
+      }).then(function(data) {
+        try {
+          node.innerHTML = data
+          //that.componentIn()
+          if(node.getElementsByTagName('script').length != 0) {
+            that.explainScript(node) // 把组件中script标签的内容进行渲染解析，
+          }
+        } catch(err) {
+          throw new Error("请传元素节点")
+        }
+        fn()
+      })
+    } else {
+      var xhr = new XMLHttpRequest()
+      xhr.open("GET", url, true);
+      xhr.onload = function(e) {
+        node.innerHTML = this.responseText
+      }
+      xhr.send()
+      fn()
+    }
+  },
+  _cmp: [],
+  createComponent: function(tagName, o) {
+    var check = this._cmp.filter(function(item) {
+      return item.tag == tagName
+    })
+    if(check.length != 0) return 0
+    var co = {}
+    co.tag = tagName
+    co.template = o.template ? o.template : null // template的优先级最高，如果只有templateUrl则会把其内容转化为template保存下来，
+    co.templateUrl = o.templateUrl ? o.templateUrl : null // 避免之后再次使用该组件时，再一次进行请求
+    if(co.templateUrl && co.template) {
+      console.error('templateもしくはtemplateUrlを入力してください');
+    }
+    this._cmp.push(co)
+  },
+  componentIn: function(fn) { // 自定义的组件标签进行渲染
+    var that = this
+    this._cmp.forEach(function(data, index) {
+      var tag = document.body.getElementsByTagName(data.tag)
+      var len = tag.length
+      if(len == 0) {
+        console.log(data.tag + '未使用')
+        return 0
+      }
+      if(data.template) {
+        for(var i = 0 ; i < len; i++) {
+          var ih = tag[0].innerHTML
+          tag[0].outerHTML = data.template + ih // getElementsByTagName返回的是动态的htmlcollection
+        }
+      } else {
+        that.loadCmp(data.templateUrl, function(data) {
+          that._cmp[index].template = data // 把组件的内容缓存起来，下次运用时不需要再次请求文件
+          for(var i = 0 ; i < len; i++) {
+            var ih = tag[0].innerHTML
+            if(i == 0) {
+              var parent = tag[0].parentNode
+              var div = document.createElement('div')  //虚拟一个dom节点，不进行真实的渲染，用它来获得script
+              div.innerHTML = data + ih
+              var script = document.createElement('script');
+              var t = document.createTextNode(div.getElementsByTagName('script')[0].text);
+              script.appendChild(t)
+              parent.appendChild(script)
+              div = null
+            }
+            tag[0].outerHTML = data // getElementsByTagName返回的是动态的htmlcollection
+          }
+          if(index == that._cmp.length - 1) {
+            fn()
+          }
+        })
+      }
+    })
+  },
+  loadCmp: function(url, fn) {
+    if(fetch) {
+      fetch(url).then(function(res) {
+        return res.text()
+      }).then(function(data) {
+        var o = new Object()
+        fn.call(o, data)
+      })
+    } else {
+      var xhr = new XMLHttpRequest()
+      xhr.open("GET", url, true);
+      xhr.onload = function(e) {
+        var o = new Object()
+        fn.call(o, this.responseText)
+      }
+      xhr.send()
+    }
+  },
+  loadFile: function(url, type, callback) {
+    if(type == 'image') {
+      if(url instanceof Array) {
+        url.forEach(function(n, index) {
+          if(index == (url.length - 1) ) {
+            this.imageLoad(item, callback)
+          } else {
+            this.imageLoad(item)
+          }
+        })
+      }
+    } else if(type == 'js') {
+      this.jsLoad(url, callback)  //如果想一组组的JS文件加载，自己写，和上面的思路相似
+    }
+  },
+  imageLoad: function(url, fn) {
+    var img = new Image();
+    img.src = url;
+    img.addEventListener('load', function() {
+      if(fn) {
+        fn();
+      }
+    })
+  },
+  _jsArray: [],
+  jsLoad: function(url, fn) {
+    if(this._jsArray.indexOf(url) != -1) {
+       console.log('no')
+       fn()
+    } else {
+      this._jsArray.push(url)
+      var script = document.createElement('script');
+      script.src = url;
+      script.addEventListener('load', function() {
+        if(fn) {
+          fn()
+        }
+      })
+      document.body.appendChild(script)
+    }
+  }
+}
