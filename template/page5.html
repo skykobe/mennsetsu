@@ -1,8 +1,26 @@
 <div class="step" data-x="0" data-y="-400" data-rotate="90" data-scale="0.4">
   <h2>コンポーネントとルーターを利用すると、シングルページアプリケーションができる</h2>
   <img src="/resources/单页.png" width="81%">
-  <p class="des">
+  <p class="des" style="font-size: 23px">
     異なる内容でも、一つWebページにも現せる。新たなWebページをダウンロードするのは必要がありません。そうすると、Webサイドの使用効率とページを現す速さも高くなります。
   </p>
+  <div class="modal" id="modal3" ondblclick="ec.fn.showCmpcode3()">
+    <div style="text-align: center">
+      <h3>ルータの実現：</h3>
+      <img src="resources/routerCode.png" width="50%">
+      <h3>ルータの使用例：</h3>
+      <img src="resources/routerUse.png">
+    </div>
+  </div>
 </div>
-<script></script>
+<script>
+    var show3 = false
+    ec.fn.showCmpcode3 = function(o) {
+      if(!show3) {
+        ec.s('#modal3').style = "opacity:1"
+      } else {
+        ec.s('#modal3').style = "opacity:0"
+      }
+      show3 = !show3
+    }
+</script>
