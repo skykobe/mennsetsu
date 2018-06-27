@@ -2,7 +2,7 @@
 .impress-not-supported .no-support-message { display:block; }
 
 /* additional styles just to make things look a bit nicer */
-body { background:#EEEEEE; color:#333; width: 100%;}
+body { background:#EEEEEE; color:#333; width: 100%;-webkit-user-select:none;}
 .step { width: 1000px; margin:0 auto 24px auto; text-align:center; }
 p {
   font-size: 25px;
