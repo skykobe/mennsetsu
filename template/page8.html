@@ -1,8 +1,8 @@
 <div class="step" data-x="-100" data-y="-4200" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="3">
-  <div class="des">
+  <div class="des" style="height: 250px;">
     <h2>研究方法：</h2>
     <p style="font-size: 21px;">
-      モデルがダイナミックトレーニングが実現するため、初期化する時に計算量を減らすため、トレーニングデータを一つずつランダムに選んでモデルを訓練する(stochastic gradient descent，SGD)。それに、トレーニングしている時、回帰係数の激しい波動を減らすため、モデルの初期訓練のループ回数をトレーニングデータの数に基づいて計算する。同時に、ループ回数に基づいて、回帰係数の変化幅の値を計算する。もし、初期のデータは少ない場合は何回複数のデータを選んでモデルをトレーニングする(Mini-batch SGD)。もしくはBGD(Batch Gradient Descent)でモデルを作る。
+      モデルがダイナミックトレーニングが実現するため、初期化する時に計算量を減らすため、トレーニングデータを一つずつランダムに選んでモデルを訓練する(<span style="color: red">stochastic gradient descent，SGD</span>)。それに、トレーニングしている時、回帰係数の激しい波動を減らすため、モデルの初期訓練のループ回数をトレーニングデータの数に基づいて計算する。同時に、ループ回数に基づいて、回帰係数の変化幅の値を計算する。もし、初期のデータは少ない場合は何回複数のデータを選んでモデルをトレーニングする(<span style="color: red">Mini-batch SGD</span>)。もしくは<span style="color: red">BGD(Batch Gradient Descent)</span>でモデルを作る。
     </p>
   </div>
   <div>
@@ -12,16 +12,23 @@
   </div>
   <div class="modal" id="modal5" ondblclick="ec.fn.showCmpcode5()">
     <div>
-      <h3>青い線：BGD、緑の線：SGD、オレンジの線：MBGD</h3>
-      <img src="resources/Figure_1.png" width="70%">
+      <h3>青い線：BGD、緑の線：SGD、オレンジの線：MSGD</h3>
+      <img src="resources/Figure_1.png" width="50%">
       <h4>一回目</h4>
-      <img src="resources/Figure_2.png" width="70%">
+      <img src="resources/Figure_2.png" width="50%">
       <h4>二回目</h4>
-      <img src="resources/Figure_3.png" width="70%">
+      <img src="resources/Figure_3.png" width="50%">
       <h4>三回目</h4>
-      <p>
-        
-      </p>
+      <div class="des" style="padding: 20px">
+        <p>
+          一般的に：
+        </p>
+        <ul>
+          <li>weightの計算速さと困難程度：SGD > MSGD > BGD</li>
+          <li>weightの波動性：SGD > MSGD > BGD</li>
+          <li>確率：BGD > MSGD > SGD</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
