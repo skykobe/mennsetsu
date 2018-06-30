@@ -31,3 +31,19 @@ li {
   transition-duration: 0.8s;
   transition-timing-function: ease, ease-in;
 }
+.modale {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  opacity: 0;
+  overflow-y: scroll;
+  width: 100%;
+  background: white;
+  height: 480px;
+  transition-property: opacity;
+  transition-duration: 0.8s;
+  transition-timing-function: ease, ease-in;
+}
