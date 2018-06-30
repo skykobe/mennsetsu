@@ -11,6 +11,22 @@
     <img src="resources/Figure_3.png" width="32%">
   </div>
   <div class="modal" id="modal5" ondblclick="ec.fn.showCmpcode5()">
+    <div class="des" style="padding: 10px">
+      <table style="font-size: 22px;">
+        <tr>
+          <td>BGD：</td>
+          <td>Batch Gradient Descent）毎回のループをするたびに、全部の訓練データを行列として、大きな行列の計算を行います。</td>
+        </tr>
+        <tr>
+          <td>SGD：</td>
+          <td>stochastic gradient descent）毎回のループをするたびに、訓練データの中で、一つをランダムに選んて、使って、トレーニングします。</td>
+        </tr>
+        <tr>
+          <td>MSGD：</td>
+          <td>（Mini-batch SGD）BGDとSGDの特性を組み立てて、毎回のループをするたびに、訓練データの中で、特定な数のデータセットをランダムに選んて、トレーニングします。</td>
+        </tr>
+      </table>
+    </div>
     <div>
       <h3>青い線：BGD、緑の線：SGD、オレンジの線：MSGD</h3>
       <img src="resources/Figure_1.png" width="50%">

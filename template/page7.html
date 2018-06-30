@@ -3,12 +3,13 @@
     <h2>ロジスティック回帰と最急降下法</h2>
   </div>
   <div>
-    <p style="font-size: 22px;text-align: left; background: white;padding: 10px">
+  <img src="resources/bodong.png" style="float: right; margin-left: 10px;margin-top: 10px" width="40%">
+    <p style="font-size: 21px;text-align: left; background: white;padding: 10px">
       研究構想：最急降下法と同じ原理を持ち、最急上昇法はただ変化の方向を逆にする。ロジスティック回帰に基づき、最急上昇法と最急降下法を利用し、分類のモデルを作る。一方、一つの特な最急上昇法により、ダイナミックトレーニングが実現できる。識別の数字データが多くなるとともに、分類モデルの確率も高くなる。一方、回帰係数の波動を減らし、正しさを高める。これらのを組み立てる。
     </p>
     <div style="text-align: center">
-      <img src="resources/jiang.png" width="40%" style="margin-right: 50px">
-      <img src="resources/shen.jpg" width="40%" >
+      <img src="resources/jiang.png" width="38%" style="margin-right: 50px">
+      <img src="resources/shen.jpg" width="38%" >
     </div>
   </div>
   <div class="modal" id="modal4" ondblclick="ec.fn.showCmpcode4()">
@@ -26,7 +27,7 @@
       <hr width="60%">
       <div style="text-align: left;margin: 30px">
         <p style="font-size: 20px">
-          Zの式中W(回帰係数)を計算する事は大切です。最急上昇法と最急降下法を共に用いる<span style="color: red; font-size: 24px">「w=w+△error」</span>ここて△errorは正数でも負数でも可能性もある。数の正負に従って、回帰の移動方向を決める。そうすると、最急上昇法と最急降下法を動態的に使って、回帰係数が最良の変化方向へ変わる。
+          Zの式中にW(回帰係数)を計算する事は大切です。最急上昇法と最急降下法を共に用いる式は<span style="color: red; font-size: 24px">「w=w+△error」</span>ここて△errorは正数でも負数でも可能性もある。数の正負に従って、回帰の移動方向を決める。そうすると、最急上昇法と最急降下法を動態的に使って、回帰係数が最良の変化方向へ変わる。
         </p>
       </div>
     </div>
@@ -41,5 +42,8 @@ ec.fn.showCmpcode4 = function(o) {
     ec.s('#modal4').style = "opacity:0"
   }
   show4 = !show4
+}
+ec.fn.bodong = function(e) {
+  
 }
 </script>
