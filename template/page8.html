@@ -23,26 +23,27 @@
         </tr>
         <tr>
           <td>MSGD：</td>
-          <td>（Mini-batch SGD）BGDとSGDの特性を組み立てた方法、毎回のループをするたびに、訓練データの中で、特定な数のデータセットをランダムに選んて、トレーニングします。</td>
+          <td>（Mini-batch SGD）あきらかにBGDとSGDの特性を組み立てた方法、毎回のループをするたびに、訓練データの中で、特定な数のデータセットをランダムに選んて、トレーニングします。</td>
         </tr>
       </table>
     </div>
     <div>
       <h3>青い線：BGD、オレンジの線：SGD、緑の線：MSGD</h3>
       <img src="resources/Figure_1.png" width="50%">
-      <h4>一回目</h4>
+      <h4>結果一</h4>
       <img src="resources/Figure_2.png" width="50%">
-      <h4>二回目</h4>
+      <h4>結果二</h4>
       <img src="resources/Figure_3.png" width="50%">
-      <h4>三回目</h4>
+      <h4>結果三</h4>
       <div class="des" style="padding: 20px">
         <p>
           一般的に：
         </p>
         <ul>
-          <li>weightの計算速さと困難程度：SGD > MSGD > BGD</li>
-          <li>weightの波動性：SGD > MSGD > BGD</li>
-          <li>確率：BGD > MSGD > SGD</li>
+          <li>回帰係数の計算速さ：SGD > MSGD > BGD</li>
+          <li>回帰係数の計算困難程度：BGD > MSGD > SGD</li>
+          <!-- <li>回帰係数の波動性：SGD > MSGD > BGD</li> -->
+          <li>モデルの確率：BGD > MSGD > SGD</li>
         </ul>
       </div>
     </div>

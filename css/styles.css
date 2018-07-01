@@ -42,7 +42,7 @@ li {
   overflow-y: scroll;
   width: 100%;
   background: white;
-  height: 480px;
+  height: 450px;
   transition-property: opacity;
   transition-duration: 0.8s;
   transition-timing-function: ease, ease-in;
