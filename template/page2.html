@@ -1,20 +1,43 @@
-<div class="step des" data-x="500" data-y="0" data-scale="0.4">
-  <h2>
-    研究目的：<br>
-    &nbsp;&nbsp;複雑すぎ、ほとんど使わない機能を捨てる。コンポーネント化に基づき、勉強しやすい、使いやすい、軽量級なフレームを研究する。
-  </h2>
-  <p style="font-size: 22px">
-    本研究では、<span style="color: red">JavaScript</span>の知識に基づき、活躍している<span style="color: red">Vue、React、Angular</span>のようなフレームワークを調査し、これらの使う方法を比べ、整理し、最新な<span style="color: red">JavaScript</span>インタフェースで作った。
-  </p>
-  <ul>
-    <li id="ookisa" onclick="ec.fn.modal()">大きさは5kbだけ</li>
-    <li>コンポーネント化で開発できる</li>
-    <li>ルーター機能を持ち、シングルページアプリケーションも作れる</li>
-    <li>ファイルのロード順序を決定できる</li>
-    <li>ほかのフレームワークと一緒に使っても良い</li>
-    <li>使いやすいし、簡単だし</li>
-  </ul>
+<div class="step" data-x="0" data-y="0" data-scale="0.4">
+  <h1>Webサイドのフレームワーク：<span style="color: red">easycmp.js</span></h1>
+  <h2>コンポーネント化でWebサイドを開発できるフレームワーク</h2>
+  <h3 class="des" style="margin-bottom: 8px;">研究背景：</h3>
+  <div>
+    <div style="width: 79%;float: left">
+      <p class="des" style="font-size: 20px;margin-top: 8px">
+        最初、コンポーネントの概念をWebサイドで定義して使うのは<span style="color: red">ExtJS、Dojo</span>フレームワークです。しかし、技術を発展するとともに色々な不足を現す(性能低い、大きさ大きすぎ、不自由)。遂に、次世代フレームワーク<span style="color: red">React、Angular、Vue</span>を代表として、今世界で流行っている[➀]。<a href="https://ja.wikipedia.org/wiki/フロントエンド" style="text-decoration: none;color: red">front-end</a>開発技術の現在、コンポーネント化の開発理念は最も重要になる。開発が簡単になるし、コードをわかりやすいし、さまざまな長所を持っているが、欠点もある。最も有名なフレームワークを例として[➁]：
+      </p>
+      <ul class="des">
+        <li style="font-size: 19px;">
+          <span style="color: red">React：</span>
+          <div>
+            性能は最も高いですが、勉強するのが一番<span style="color: blue">難しい</span>。更に、Reactに対すて必要なツールがいくつある(jsx、Reduxなど)。あまり<span style="color: blue">使用し安くない</span>。
+          </div>
+        </li>
+        <li style="font-size: 19px;">
+          <span style="color: red">Angular:</span>
+          <div>
+            必要なツールはReactより少ないですが、フレームだけの<span style="color: blue">大きさも800kb</span>がある。Webページのダウンロード速度とロード速度は最も<span style="color: blue">遅い</span>。それに、あまり使わない機能沢山ある。
+          </div>
+        </li>
+        <li style="font-size: 19px;">
+          <span style="color: red">Vue:</span>
+          <div>
+            Angularより大きさが小さい。Reactより簡単になる。しかし、Vueのツールが最も少なくて、Vueの<span style="color: blue">資源</span>も少ない(前のフレームと比べたら)
+          </div>
+        </li>
+      </ul>
+      <div style="text-align: left">
+        <span style="font-size: 8px;">➀:组件化架构漫谈-----简书-刘小壮</span>
+        <span style="font-size: 8px;">②:前端框架Vue、angular、React的优点和缺点-----博客园</span>
+      </div>
+    </div>
+    <div style="width: 20%;float: left">
+      <img src="resources/RAV.jpg" width="70%">
+      <div>
+        図１
+      </div>
+    </div>
+  </div>
 </div>
-<script>
-
-</script>
+<script></script>

@@ -1,41 +1,27 @@
-<div class="step" data-x="500" data-y="-400" data-scale="0.4">
-  <p style="margin-bottom: 5px;font-size: 22px;" class="des"> 
-  Webサイドのコンポーネントとは：<br>
-  &nbsp;&nbsp;Webページの中の内容を一つずつ分け、コンポーネント(<span style="color: red">component</span>)とする。
-  そうすればいくつ長所がある。
+<div class="step des" data-x="500" data-y="0" data-scale="0.4">
+  <h2>
+    研究目的：<br>
+    &nbsp;&nbsp;複雑すぎ、ほとんど使わない機能を捨てる。コンポーネント化に基づき、勉強しやすい、使いやすい、軽量級なフレームを研究する。
+  </h2>
+  <p style="font-size: 22px">
+    本研究では、<span style="color: red">JavaScript</span>[➀]の知識に基づき、活躍している<span style="color: red">Vue</span>[➁]、<span style="color: red">React</span>[➂]、<span style="color: red">Angular</span>[➃]のようなフレームワークを調査し、これらの使う方法を比べ、整理し、最新な<span style="color: red">JavaScriptインタフェースし</span>[➄]で作った。
   </p>
-  <ul style="margin-bottom: 7px;margin-top: 5px;font-size: 20px" class="des">
-    <li>大きなページを一つずつ小さくし、独立で開発し、Webサイドを作ることの効率が高い</li>
-    <li>ページのコードを見る時、わかりやすい。</li>
-    <li>サイドを維持すると、なかなか簡単になる</li>
+  <ul>
+    <li id="ookisa" onclick="ec.fn.modal()">大きさは5kbだけ</li>
+    <li>コンポーネント化で開発できる</li>
+    <li>ルーター機能を持ち、シングルページアプリケーションも作れる</li>
+    <li>ファイルのロード順序を決定できる</li>
+    <li>ほかのフレームワークと一緒に使っても良い</li>
+    <li>使いやすい、簡単だ</li>
   </ul>
-  <img src="resources/Cmp.png" width="81%">
-  <p style="margin-top: 3px" class="des">
-    ですから、この開発理念はプログラミングを開発する時、コンポーネントを開発単位として、それぞれを作り、最後に組み立てて、サイドができます。。
-  </p>
-  <div class="modal" id="code1" ondblclick="ec.fn.showCmpcode()">
-    <div class="des">
-      <img src="resources/code.png" style="float: left; margin-right: 15px; margin-left: 10px" width="42%">
-      <p>       
-        <span style="color: red">index.html</span>のファイルははっきりになる。開発者が自由に<span style="color: red">HTMLタグ</span>を定義できる。コードを読む場合は覚えやすくて、わかりやすい。
-      </p>
-    </div>
-    <div style="padding: 10px">
-      <img src="resources/cmp2.png" width="99%">
-      <p class="des">
-        それぞれのコンポーネントを独立に管理し、開発の時と維持の時も効率が高い。それに、コンポーネントのファイルのタイプは要求がなくて、<span style="color: red">.html、.txt</span>なども良い。特別なデコーダを設定、配置するのは要らない。ファイルの文法もしくは<span style="color: red">書き方はHTML</span>と同じです。
-      </p>
-    </div>   
+  <div class="test">
+    <span style="font-size: 8px;">➀:Professional JavaScript for Web Developers[Nicholas C.Zakas]</span>
+    <span style="font-size: 8px;">➁:Vue教程[Vue团队]</span>
+    <span style="font-size: 8px;">➂:React教程[React团队]</span>
+    <span style="font-size: 8px;">➃:Angular教程[Angular团队]</span>
+    <span style="font-size: 8px;">➄:ES6 标准入门[阮一峰]</span>
   </div>
 </div>
 <script>
-  var show = false
-  ec.fn.showCmpcode = function(o) {
-    if(!show) {
-      ec.s('#code1').style = "opacity:1"
-    } else {
-      ec.s('#code1').style = "opacity:0"
-    }
-    show = !show
-  }
+
 </script>

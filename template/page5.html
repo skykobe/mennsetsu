@@ -1,26 +1,44 @@
-<div class="step" data-x="0" data-y="-400" data-rotate="90" data-scale="0.4">
-  <h2>コンポーネントとルーターを利用して、シングルページアプリケーションを作りやすいです</h2>
-  <img src="resources/单页.png" width="81%">
-  <p class="des" style="font-size: 23px">
-    異なる内容でも、一つWebページにも現せる。新たなWebページをダウンロードするのは必要がありません。そうすると、Webサイドのコードの使用効率とページを現す速度も高くなります。
+<div class="step des" data-x="500" data-y="-800" data-scale="0.4">
+  <h2 style="margin-bottom: 3px;">
+    コンポーネントの実現方法：
+  </h2>
+  <p class="des" style="font-size: 22px;margin-top: 10px;">
+    最も重要な三つ機能関数：<span style="color: red">createComponent()</span>、<span style="color: red">componentIn()</span>、<span style="color: red">loadCmp()</span>
   </p>
-  <div class="modal" id="modal3" ondblclick="ec.fn.showCmpcode3()">
+  <ul　style="font-size: 22px;">
+    <li><span style="color: red">createComponent()</span>：タグを登録する機能を持つ。登録したタグをフレームワークのコンポーネント表に入れてコンポーネントになる。実はコンポーネント表を作る。
+    </li>
+    <li><span style="color: red">componentIn()</span>：コンポーネント表のデータを見て、loadCmpを利用し、Webページの中でタグからコンポーネントを作る。原理は<span style="color: red">HTMLのDOM</span>の操作(生成、削除)、ノードの<span style="color: red">innerHTMLとouterHTML関数</span>を用いて、ページに書き込み。
+    </li>
+    <li><span style="color: red">loadCmp()</span>：最新なJsインタフェースfetchを利用し、コンポーネントのファイルから、コンポーネントの文字列データを読み出す
+    </li>
+  </ul>
+  <div style="text-align: center; margin-top: 15px">
+    <img src="resources/sghs.jpg" width="60%">
+  </div>
+  <div class="modal" id="modal2" ondblclick="ec.fn.showCmpcode2()">
+    <img src="resources/sghs.png" width="100%">
+    <div style="padding: 10px">
+      <p>
+        フレームワークの効率のため、コンポーネントファイルを初めてアクセスする時、読み出したデータをコンポーネント表に保存する。二度ファイルをアクセスする必要がない。
+      </p>
+    </div>
     <div style="text-align: center">
-      <h3>ルータの実現：</h3>
-      <img src="resources/routerCode.png" width="50%">
-      <h3>ルータの使用例：</h3>
-      <img src="resources/routerUse.png">
+      <h3>コンポーネント表の構造：</h3>
+      <img src="resources/cmptable.png">
+      <h3>対するコード</h3>
+      <img src="resources/cc.png" width="80%">
     </div>
   </div>
 </div>
 <script>
-var show3 = false
-ec.fn.showCmpcode3 = function(o) {
-  if(!show3) {
-    ec.s('#modal3').style = "opacity:1"
-  } else {
-    ec.s('#modal3').style = "opacity:0"
+  var show2 = false
+  ec.fn.showCmpcode2 = function(o) {
+    if(!show2) {
+      ec.s('#modal2').style = "opacity:1"
+    } else {
+      ec.s('#modal2').style = "opacity:0"
+    }
+    show2 = !show2
   }
-  show3 = !show3
-}
 </script>

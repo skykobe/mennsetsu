@@ -28,6 +28,12 @@ ec.createComponent('page9', {
 ec.createComponent('page10', {
   templateUrl: 'template/page10.html'
 })
+ec.createComponent('page11', {
+  templateUrl: 'template/page11.html'
+})
+ec.createComponent('page12', {
+  templateUrl: 'template/page12.html'
+})
 ec.componentIn(function() {
   ec.jsLoad('lib/impress.js', function(o) {
     // ec.jsLoad('lib/test.js', function(o) {

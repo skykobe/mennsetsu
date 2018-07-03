@@ -1,44 +1,41 @@
-<div class="step des" data-x="500" data-y="-800" data-scale="0.4">
-  <h2 style="margin-bottom: 3px;">
-    コンポーネントの実現方法：
-  </h2>
-  <p class="des" style="font-size: 22px;margin-top: 10px;">
-    最も重要な三つ機能関数：<span style="color: red">createComponent()</span>、<span style="color: red">componentIn()</span>、<span style="color: red">loadCmp()</span>
+<div class="step" data-x="500" data-y="-400" data-scale="0.4">
+  <p style="margin-bottom: 5px;font-size: 22px;" class="des"> 
+  Webサイドのコンポーネントとは：<br>
+  &nbsp;&nbsp;Webページの中の内容を一つずつ分け、コンポーネント(<span style="color: red">component</span>)とする。
+  そうすればいくつ長所がある。
   </p>
-  <ul　style="font-size: 22px;">
-    <li><span style="color: red">createComponent()</span>：タグを登録する機能を持つ。登録したタグをフレームワークのコンポーネント表に入れてコンポーネントになる。実はコンポーネント表を作る。
-    </li>
-    <li><span style="color: red">componentIn()</span>：コンポーネント表のデータを見て、loadCmpを利用し、Webページの中でタグからコンポーネントを作る。原理は<span style="color: red">HTMLのDOM</span>の操作(生成、削除)、ノードの<span style="color: red">innerHTMLとouterHTML関数</span>を用いて、ページに書き込み。
-    </li>
-    <li><span style="color: red">loadCmp()</span>：最新なJsインタフェースfetchを利用し、コンポーネントのファイルから、コンポーネントの文字列データを読み出す
-    </li>
+  <ul style="margin-bottom: 7px;margin-top: 5px;font-size: 20px" class="des">
+    <li>大きなページを一つずつ小さくなり、独立で開発て、Webサイドを作ることの効率が高い</li>
+    <li>ページのコードを見る時、わかりやすい。</li>
+    <li>サイドを維持すると、なかなか簡単になる</li>
   </ul>
-  <div style="text-align: center; margin-top: 15px">
-    <img src="resources/sghs.jpg" width="60%">
-  </div>
-  <div class="modal" id="modal2" ondblclick="ec.fn.showCmpcode2()">
-    <img src="resources/sghs.png" width="100%">
-    <div style="padding: 10px">
-      <p>
-        フレームワークの効率のため、コンポーネントファイルを初めてアクセスする時、読み出したデータをコンポーネント表に保存する。二度ファイルをアクセスする必要がない。
+  <img src="resources/Cmp.png" width="81%">
+  <p style="margin-top: 3px" class="des">
+    ですから、この開発理念はプログラミングを開発する時、コンポーネントを開発単位として、それぞれを作り、最後に組み立てて、サイドができます。。
+  </p>
+  <div class="modal" id="code1" ondblclick="ec.fn.showCmpcode()">
+    <div class="des">
+      <img src="resources/code.png" style="float: left; margin-right: 15px; margin-left: 10px" width="42%">
+      <p>       
+        <span style="color: red">index.html</span>のファイルははっきりになる。開発者が自由に<span style="color: red">HTMLタグ</span>を定義できる。コードを読む場合は覚えやすくて、わかりやすい。
       </p>
     </div>
-    <div style="text-align: center">
-      <h3>コンポーネント表の構造：</h3>
-      <img src="resources/cmptable.png">
-      <h3>対するコード</h3>
-      <img src="resources/cc.png" width="80%">
-    </div>
+    <div style="padding: 10px">
+      <img src="resources/cmp2.png" width="99%">
+      <p class="des">
+        それぞれのコンポーネントを独立に管理し、開発の時と維持の時も効率が高い。それに、コンポーネントのファイルのタイプは要求がなくて、<span style="color: red">.html、.txt</span>なども良い。特別なデコーダを設定、配置するのは要らない。ファイルの文法もしくは<span style="color: red">書き方はHTML</span>と同じです。
+      </p>
+    </div>   
   </div>
 </div>
 <script>
-  var show2 = false
-  ec.fn.showCmpcode2 = function(o) {
-    if(!show2) {
-      ec.s('#modal2').style = "opacity:1"
+  var show = false
+  ec.fn.showCmpcode = function(o) {
+    if(!show) {
+      ec.s('#code1').style = "opacity:1"
     } else {
-      ec.s('#modal2').style = "opacity:0"
+      ec.s('#code1').style = "opacity:0"
     }
-    show2 = !show2
+    show = !show
   }
 </script>

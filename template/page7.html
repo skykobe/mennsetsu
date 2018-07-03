@@ -1,49 +1,11 @@
-<div class="step" data-x="-600" data-y="-9000" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="3">
-  <div class="des">
-    <h2>ロジスティック回帰と最急降下法</h2>
-  </div>
-  <div>
-  <img src="resources/bodong.png" style="float: right; margin-left: 10px;margin-top: 10px" width="40%">
-    <p style="font-size: 21px;text-align: left; background: white;padding: 10px">
-      研究構想：最急降下法と同じ原理を持ち、最急上昇法はただ変化の方向を逆にする。ロジスティック回帰に基づき、最急上昇法と最急降下法を利用し、分類のモデルを作る。一方、一つの特な最急上昇法により、ダイナミックトレーニングが実現できる。識別の数字データが多くなるとともに、分類モデルの確率も高くなる。一方、回帰係数の波動を減らし、正しさを高める。これらのを組み立てる。
-    </p>
-    <div style="text-align: center">
-      <img src="resources/jiang.png" width="38%" style="margin-right: 50px">
-      <img src="resources/shen.jpg" width="38%" >
-    </div>
-  </div>
-  <div class="modal" id="modal4" ondblclick="ec.fn.showCmpcode4()">
-    <div style="margin-top: 2px;">
-      <div class="des" style="padding: 30px;">
-        <h3>研究目的：</h3>
-        <p style="font-size: 20px">
-          最急上昇法(最急降下法)の方法を研究し、計算量を減らし、格好な回帰係数（<span style="color: red">重み係数</span>）を探し、分類モデルの波動が減り、該当アルゴリズムを最適化にします。
-        </p>
-      </div>
-      <img src="resources/logist.png" width="55%">
-      <p>
-        <span style="color: red">Sigmoid</span>関数の値に基づいて、分類の結果を決定する。
-      </p>
-      <hr width="60%">
-      <div style="text-align: left;margin: 30px">
-        <p style="font-size: 20px">
-          Zの式中にW(回帰係数)を計算する事は大切です。最急上昇法と最急降下法を共に用いる式は<span style="color: red; font-size: 24px">「w=w+△error」</span>ここて△errorは正数でも負数でも可能性もある。数の正負に従って、回帰の移動方向を決める。そうすると、最急上昇法と最急降下法を動態的に使って、回帰係数が最良の変化方向へ変わる。
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="step" data-x="-100" data-y="-900" data-rotate-x="60" data-rotate-y="60" data-rotate-z="30" data-scale="0.3">
+  <h1>
+    ···今まで
+  </h1>
+  <hr>
+  <h1>
+    これから···
+  </h1>
+  <h2>「ロジスティック回帰と最急降下法で数字の識別」</h2>
 </div>
-<script>
-var show4 = false
-ec.fn.showCmpcode4 = function(o) {
-  if(!show4) {
-    ec.s('#modal4').style = "opacity:1"
-  } else {
-    ec.s('#modal4').style = "opacity:0"
-  }
-  show4 = !show4
-}
-ec.fn.bodong = function(e) {
-  
-}
-</script>
+<script></script>

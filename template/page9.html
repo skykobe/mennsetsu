@@ -1,23 +1,49 @@
-<div class="step" data-x="800" data-y="2200" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="3">
+<div class="step" data-x="-600" data-y="-9000" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="2">
   <div class="des">
-    <p>
-    しかし、一つのロジスティック回帰モデルは二種類を分けられる(yes or no)けど、0-9の数字を識別する場合は種類が多い。ですから、10個の数字を識別するため、10個のモデルを作って、適当に組み立てる。最悪な状況で分類を十回行う。
-    </p>
+    <h2>ロジスティック回帰と最急降下法</h2>
   </div>
-  <img src="resources/shuzi.png" width="35%" style="margin-right: 15px;">
-  <img src="resources/liuc.png" width="62%">
-  <div class="modale" id="modal6" ondblclick="ec.fn.showCmpcode6()">
-    <img src="resources/SZ.png">
+  <div>
+  <img src="resources/bodong.png" style="float: right; margin-left: 10px;margin-top: 10px" width="40%">
+    <p style="font-size: 21px;text-align: left; background: white;padding: 10px">
+      研究構想：最急降下法と同じ原理を持ち、最急上昇法はただ変化の方向を逆にする。ロジスティック回帰に基づき、最急上昇法と最急降下法を利用し、分類のモデルを作る。一方、SGDにより、動態なトレーニングが実現できる。数字を識別するとともに、分類モデルの確率も高くなる。一方、適当なアルゴリズムを用いて、回帰係数の波動を減らし、正しさを高める。
+    </p>
+    <div style="text-align: center">
+      <img src="resources/jiang.png" width="40%" style="margin-right: 50px">
+      <img src="resources/shen.png" width="40%" >
+    </div>
+  </div>
+  <div class="modal" id="modal4" ondblclick="ec.fn.showCmpcode4()">
+    <div style="margin-top: 2px;">
+      <div class="des" style="padding: 30px;">
+        <h3>研究目的：</h3>
+        <p style="font-size: 20px">
+          最急上昇法(最急降下法)の方法を研究し、計算量を減らし、格好な回帰係数（<span style="color: red">重み係数</span>）を探し、分類モデルの波動が減り、該当アルゴリズムを最適化にします。
+        </p>
+      </div>
+      <img src="resources/logist.png" width="55%">
+      <p>
+        <span style="color: red">Sigmoid</span>関数の値に基づいて、分類の結果を決定する。
+      </p>
+      <hr width="60%">
+      <div style="text-align: left;margin: 30px">
+        <p style="font-size: 20px">
+          Zの式中にW(回帰係数)を計算する事は大切です。最急上昇法と最急降下法を共に用いる式は<span style="color: red; font-size: 24px">「w=w+△error」</span>ここて△errorは正数でも負数でも可能性もある。数の正負に従って、回帰の移動方向を決める。そうすると、最急上昇法と最急降下法を動態的に使って、回帰係数が最良の変化方向へ変わる。
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 <script>
-var show6 = false
-ec.fn.showCmpcode6 = function(o) {
-  if(!show6) {
-    ec.s('#modal6').style = "opacity:1"
+var show4 = false
+ec.fn.showCmpcode4 = function(o) {
+  if(!show4) {
+    ec.s('#modal4').style = "opacity:1"
   } else {
-    ec.s('#modal6').style = "opacity:0"
+    ec.s('#modal4').style = "opacity:0"
   }
-  show6 = !show6
+  show4 = !show4
+}
+ec.fn.bodong = function(e) {
+  
 }
 </script>

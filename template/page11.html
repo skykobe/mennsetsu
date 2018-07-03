@@ -1,0 +1,24 @@
+<div class="step" data-x="800" data-y="2200" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="0.5">
+  <div class="des">
+    <h2>研究方法：</h2>
+    <p>
+    しかし、一つのロジスティック回帰モデルは二種類を分けられる(yes or no)けど、0-9の数字を識別する場合は種類が多い。ですから、10個の数字を識別するため、10個のモデルを作って、数字の識別システムができる。識別の確率のため、分類を十回行う。
+    </p>
+  </div>
+  <img src="resources/shuzi.png" width="35%" style="margin-right: 15px;">
+  <img src="resources/liuc.png" width="62%">
+  <div class="modale" id="modal6" ondblclick="ec.fn.showCmpcode6()">
+    <img src="resources/SZ.png">
+  </div>
+</div>
+<script>
+var show6 = false
+ec.fn.showCmpcode6 = function(o) {
+  if(!show6) {
+    ec.s('#modal6').style = "opacity:1"
+  } else {
+    ec.s('#modal6').style = "opacity:0"
+  }
+  show6 = !show6
+}
+</script>

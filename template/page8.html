@@ -1,62 +1,21 @@
-<div class="step" data-x="-100" data-y="-4200" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="3">
-  <div class="des" style="height: 250px;">
-    <h2>研究方法：</h2>
-    <p style="font-size: 21px;">
-      モデルがダイナミックトレーニングが実現するため、初期化する時に計算量を減らすため、トレーニングデータを一つずつランダムに選んでモデルを訓練する(<span style="color: red">stochastic gradient descent，SGD</span>)。それに、トレーニングしている時、回帰係数の激しい波動を減らすため、モデルの初期訓練のループ回数をトレーニングデータの数に基づいて計算する。同時に、ループ回数に基づいて、回帰係数の変化幅の値を計算する。もし、初期のデータは少ない場合は何回複数のデータを選んでモデルをトレーニングする(<span style="color: red">Mini-batch SGD</span>)。もしくは<span style="color: red">BGD(Batch Gradient Descent)</span>でモデルを作る。
+<div class="step" data-x="-2200" data-y="-14000" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="3">
+  <div class="des">
+    <h2>研究背景：</h2>
+    <p style="font-size: 20px;padding: 10px">
+      数字の識別はよくKNN方法を使う。とても高い確率を持ちますけれど、プログラムの計算複雑度と必要なパソコン資源が非常に多いです。毎回識別するたびに、複雑な計算を行わなければならない[➀][➂]。ロジスティック回帰は汎用性が高い、計算が簡単、動態なプログラムができる。現在、沢山IT会社はロジスティック回帰を使い、クライアントの使用データを分析し、アプリケーションを更新する[➁]。
     </p>
-  </div>
-  <div>
-    <img src="resources/Figure_1.png" width="32%">
-    <img src="resources/Figure_2.png" width="32%">
-    <img src="resources/Figure_3.png" width="32%">
-  </div>
-  <div class="modal" id="modal5" ondblclick="ec.fn.showCmpcode5()">
-    <div class="des" style="padding: 10px">
-      <table style="font-size: 22px;">
-        <tr>
-          <td>BGD：</td>
-          <td>（Batch Gradient Descent）毎回のループをするたびに、全部の訓練データを行列として、大きな行列の計算を行います。</td>
-        </tr>
-        <tr>
-          <td>SGD：</td>
-          <td>（stochastic gradient descent）毎回のループをするたびに、訓練データの中で、一つをランダムに選んて、使って、トレーニングします。</td>
-        </tr>
-        <tr>
-          <td>MSGD：</td>
-          <td>（Mini-batch SGD）あきらかにBGDとSGDの特性を組み立てた方法、毎回のループをするたびに、訓練データの中で、特定な数のデータセットをランダムに選んて、トレーニングします。</td>
-        </tr>
-      </table>
-    </div>
     <div>
-      <h3>青い線：BGD、オレンジの線：SGD、緑の線：MSGD</h3>
-      <img src="resources/Figure_1.png" width="50%">
-      <h4>結果一</h4>
-      <img src="resources/Figure_2.png" width="50%">
-      <h4>結果二</h4>
-      <img src="resources/Figure_3.png" width="50%">
-      <h4>結果三</h4>
-      <div class="des" style="padding: 20px">
-        <p>
-          一般的に：
-        </p>
-        <ul>
-          <li>回帰係数の計算速さ：SGD > MSGD > BGD</li>
-          <li>回帰係数の計算困難程度：BGD > MSGD > SGD</li>
-          <!-- <li>回帰係数の波動性：SGD > MSGD > BGD</li> -->
-          <li>モデルの確率：BGD > MSGD > SGD</li>
-        </ul>
-      </div>
+      <h2>研究目的：</h2>
+      <img src="resources/logist.png" style="float: right; margin-left: 10px" width="32%">
+      <p>
+        <span style="font-size: 15px;font-weight: bolder">[sigmoid 函数: g(x)=1/1+e^(−z), z=w1x1+w2x2+w3x3+··wnxn][➀][➁]</span><br>
+        最急降下法(最急上昇法)の方法を研究し、計算量を減らし、格好な回帰係数（<span style="color: red">重み係数</span>）を探し、分類モデルの波動が減り、該当アルゴリズムを最適化にします。
+      </p>
     </div>
+  </div>
+  <br>
+  <div class="test des">
+    <p style="font-size: 10px">➀:Machine Learning in Action[Peter Harrington]➁:Logistic Regression 模型简介[美团技术团队]➂:机器学习十大算法系列[CSDN-深度学习思考者]</p>
   </div>
 </div>
-<script>
-var show5 = false
-ec.fn.showCmpcode5 = function(o) {
-  if(!show5) {
-    ec.s('#modal5').style = "opacity:1"
-  } else {
-    ec.s('#modal5').style = "opacity:0"
-  }
-  show5 = !show5
-}
-</script>
+<script></script>
